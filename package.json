@@ -1,0 +1,47 @@
+{
+  "name": "storybook-atomic-dashboard",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "server": "json-server --watch db.json --port 3000 --host 127.0.0.1",
+    "dev-with-server": "concurrently \"npm run server\" \"npm run dev\"",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "storybook": "set HOME=%CD%\\.storybook-home && set USERPROFILE=%CD%\\.storybook-home && storybook dev -p 6006",
+    "build-storybook": "set HOME=%CD%\\.storybook-home && set USERPROFILE=%CD%\\.storybook-home && storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^25.6.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "concurrently": "^9.2.1",
+    "jsdom": "^29.1.1",
+    "storybook": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.6"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.0.1",
+    "@mui/material": "^9.0.1",
+    "axios": "^1.16.0",
+    "json-server": "^0.17.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.15.0"
+  }
+}

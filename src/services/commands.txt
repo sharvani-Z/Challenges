@@ -1,0 +1,25 @@
+get all  - Invoke-RestMethod `
+         -Uri "http://localhost:3000/challenges"
+
+
+get one -   Invoke-RestMethod `
+            -Uri "http://localhost:3000/challenges/1"
+
+
+post  -    Invoke-RestMethod `
+            -Uri "http://localhost:3000/challenges" `
+            -Method POST `
+            -ContentType "application/json" `
+            -Body '{"title":"CSS","status":"Pending"}'
+
+
+patch  -     Invoke-RestMethod `
+                -Uri "http://localhost:3000/challenges/1" `
+                -Method PATCH `
+                -ContentType "application/json" `
+                -Body '{"status":"Completed"}'
+
+
+delete -    Invoke-RestMethod `
+            -Uri "http://localhost:3000/challenges/1" `
+            -Method DELETE

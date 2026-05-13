@@ -1,0 +1,24 @@
+{
+  "challenges": [
+    {
+      "title": "react",
+      "status": "Completed",
+      "id": 1
+    },
+    {
+      "title": "html",
+      "status": "Pending",
+      "id": 2
+    },
+    {
+      "title": "CSS",
+      "status": "Completed",
+      "id": 3
+    },
+    {
+      "title": "AWS",
+      "status": "Pending",
+      "id": 4
+    }
+  ]
+}
