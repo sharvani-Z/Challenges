@@ -4,7 +4,7 @@ type AvatarProps = {
   name: string;
 };
 
-function Avatar({ name }: AvatarProps) {
+function Avatar({ name }: Readonly<AvatarProps>) {
   const initials = name
     .split(" ")
     .map((part) => part[0])

@@ -1,5 +1,4 @@
-import { Outlet } from "react-router-dom";
-import { Link as RouterLink } from "react-router-dom";
+import { Outlet, Link as RouterLink } from "react-router-dom";
 import { useAppTheme } from "context/ThemeContext";
 import {
   AppBar,
@@ -15,18 +14,43 @@ function BasicTemplate() {
   const { mode, toggleTheme } = useAppTheme();
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "background.default", color: "text.primary" }}>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        bgcolor: "background.default",
+        color: "text.primary",
+      }}
+    >
       <AppBar position="static" color="primary" enableColorOnDark>
         <Container maxWidth="xl">
-          <Toolbar disableGutters sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Toolbar
+            disableGutters
+            sx={{ display: "flex", justifyContent: "space-between" }}
+          >
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
-              <Typography variant="h6" component="span" sx={{ fontWeight: 700 }}>
+              <Typography
+                variant="h6"
+                component="span"
+                sx={{ fontWeight: 700 }}
+              >
                 Atomic Dashboard
               </Typography>
-              <Link component={RouterLink} to="/" color="inherit" underline="hover" sx={{ fontSize: "0.95rem" }}>
+              <Link
+                component={RouterLink}
+                to="/"
+                color="inherit"
+                underline="hover"
+                sx={{ fontSize: "0.95rem" }}
+              >
                 Dashboard
               </Link>
-              <Link component={RouterLink} to="/settings" color="inherit" underline="hover" sx={{ fontSize: "0.95rem" }}>
+              <Link
+                component={RouterLink}
+                to="/settings"
+                color="inherit"
+                underline="hover"
+                sx={{ fontSize: "0.95rem" }}
+              >
                 Settings
               </Link>
             </Box>

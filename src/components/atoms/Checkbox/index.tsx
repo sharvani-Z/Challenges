@@ -5,7 +5,7 @@ type CheckboxProps = {
   onChange?: (checked: boolean) => void;
 };
 
-function Checkbox({ checked = false, onChange }: CheckboxProps) {
+function Checkbox({ checked = false, onChange }: Readonly<CheckboxProps>) {
   return (
     <input
       className="atom-checkbox"

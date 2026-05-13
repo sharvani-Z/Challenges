@@ -7,7 +7,7 @@ type AddChallengeFormProps = {
   onAddChallenge?: (challenge: Omit<Challenge, "id">) => void;
 };
 
-function AddChallengeForm({ onAddChallenge }: AddChallengeFormProps) {
+function AddChallengeForm({ onAddChallenge }: Readonly<AddChallengeFormProps>) {
   const [title, setTitle] = useState("");
 
   const handleSubmit = () => {
@@ -29,7 +29,9 @@ function AddChallengeForm({ onAddChallenge }: AddChallengeFormProps) {
         label="Challenge title"
         placeholder="Design a new task section"
         value={title}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)}
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+          setTitle(event.target.value)
+        }
         fullWidth
       />
       <Button

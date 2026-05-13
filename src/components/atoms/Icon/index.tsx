@@ -4,7 +4,7 @@ type IconProps = {
   label: string;
 };
 
-function Icon({ label }: IconProps) {
+function Icon({ label }: Readonly<IconProps>) {
   return (
     <span className="atom-icon" aria-label={label} title={label}>
       ⭐

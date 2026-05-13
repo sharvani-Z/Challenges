@@ -8,7 +8,7 @@ type ChallengeItemProps = {
   onAction?: () => void;
 };
 
-function ChallengeItem({ challenge, onAction }: ChallengeItemProps) {
+function ChallengeItem({ challenge, onAction }: Readonly<ChallengeItemProps>) {
   const actionLabel =
     challenge.status === "Pending" ? "Mark Completed" : "Mark Pending";
 
@@ -24,7 +24,13 @@ function ChallengeItem({ challenge, onAction }: ChallengeItemProps) {
         borderColor: "divider",
       }}
     >
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <Typography variant="subtitle1" sx={{ color: "text.primary" }}>
           {challenge.title}
         </Typography>

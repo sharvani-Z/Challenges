@@ -8,12 +8,18 @@ type InputProps = {
   onChange?: (value: string) => void;
 };
 
-function Input({ placeholder = "", value = "", onChange }: InputProps) {
+function Input({
+  placeholder = "",
+  value = "",
+  onChange,
+}: Readonly<InputProps>) {
   return (
     <TextField
       placeholder={placeholder}
       value={value}
-      onChange={(event: ChangeEvent<HTMLInputElement>) => onChange?.(event.target.value)}
+      onChange={(event: ChangeEvent<HTMLInputElement>) =>
+        onChange?.(event.target.value)
+      }
       fullWidth
       variant="outlined"
     />

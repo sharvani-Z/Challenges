@@ -6,7 +6,11 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-function Button({ label, variant = "primary", onClick }: ButtonProps) {
+function Button({
+  label,
+  variant = "primary",
+  onClick,
+}: Readonly<ButtonProps>) {
   return (
     <MuiButton
       variant={variant === "primary" ? "contained" : "outlined"}

@@ -8,7 +8,11 @@ type SearchBarProps = {
   onSearch?: () => void;
 };
 
-function SearchBar({ query = "", onQueryChange, onSearch }: SearchBarProps) {
+function SearchBar({
+  query = "",
+  onQueryChange,
+  onSearch,
+}: Readonly<SearchBarProps>) {
   return (
     <Box sx={{ display: "grid", gap: 2, width: "100%", maxWidth: 620 }}>
       <Input

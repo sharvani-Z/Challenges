@@ -1,4 +1,10 @@
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 
 type ThemeMode = "light" | "dark";
@@ -30,8 +36,10 @@ export function AppThemeProvider({ children }: { children: ReactNode }) {
     setMode((current) => (current === "light" ? "dark" : "light"));
   };
 
+  const value = useMemo(() => ({ mode, toggleTheme }), [mode, toggleTheme]);
+
   return (
-    <ThemeContext.Provider value={{ mode, toggleTheme }}>
+    <ThemeContext.Provider value={value}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}

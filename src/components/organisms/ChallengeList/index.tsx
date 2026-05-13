@@ -7,7 +7,10 @@ type ChallengeListProps = {
   onToggleStatus?: (challenge: Challenge) => void;
 };
 
-function ChallengeList({ challenges, onToggleStatus }: ChallengeListProps) {
+function ChallengeList({
+  challenges,
+  onToggleStatus,
+}: Readonly<ChallengeListProps>) {
   if (challenges.length === 0) {
     return (
       <Typography color="text.secondary" sx={{ m: 0 }}>

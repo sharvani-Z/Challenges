@@ -15,7 +15,7 @@ const badgeStyles = {
   },
 } as const;
 
-function Badge({ status }: BadgeProps) {
+function Badge({ status }: Readonly<BadgeProps>) {
   return (
     <span className="atom-badge" style={badgeStyles[status]}>
       {status}

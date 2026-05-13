@@ -46,7 +46,7 @@ export const ChallengeAPI = {
   },
 
   // Get a single challenge by ID (async/await)
-  async getById(id: string | number): Promise<Challenge | null> {
+  async getById(id: string): Promise<Challenge | null> {
     try {
       const response = await axiosInstance.get<Challenge>(`/challenges/${id}`);
       return response.data;
@@ -57,7 +57,7 @@ export const ChallengeAPI = {
   },
 
   // Get a single challenge by ID (using promises)
-  getByIdWithPromises(id: string | number): Promise<Challenge | null> {
+  getByIdWithPromises(id: string): Promise<Challenge | null> {
     return axiosInstance
       .get<Challenge>(`/challenges/${id}`)
       .then((response) => response.data)
