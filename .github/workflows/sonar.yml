@@ -1,3 +1,11 @@
+name: SonarCloud
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
   sonar:
     runs-on: ubuntu-latest
@@ -12,7 +20,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run test:coverage
+      - run: npx vitest run --coverage
 
       - uses: SonarSource/sonarqube-scan-action@v5
         env:
