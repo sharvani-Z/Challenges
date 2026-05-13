@@ -19,9 +19,11 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install
+      - run: npm ci
 
-      - run: npx vitest --coverage
+      - run: chmod +x node_modules/.bin/vitest
+
+      - run: npx vitest run --coverage
 
       - uses: SonarSource/sonarqube-scan-action@v5
         env:
