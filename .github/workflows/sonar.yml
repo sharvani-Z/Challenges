@@ -12,8 +12,6 @@ jobs:
 
       - run: npm ci
 
-      - run: chmod +x node_modules/.bin/vitest
-
       - run: npm run test:coverage
 
       - uses: SonarSource/sonarqube-scan-action@v5

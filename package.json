@@ -12,9 +12,10 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
+    "test:coverage": "vitest --coverage",
     "storybook": "set HOME=%CD%\\.storybook-home && set USERPROFILE=%CD%\\.storybook-home && storybook dev -p 6006",
     "build-storybook": "set HOME=%CD%\\.storybook-home && set USERPROFILE=%CD%\\.storybook-home && storybook build"
-  },
+},
   "devDependencies": {
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/react-vite": "^8.0.0",
