@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import DashboardTemplate from "./index";
@@ -56,12 +56,16 @@ describe("DashboardTemplate", () => {
     const input = screen.getByPlaceholderText("Design a new task section");
     const initialButton = screen.getByRole("button", { name: /enter title/i });
 
-    await user.type(input, "New Challenge");
+    await act(async () => {
+      await user.type(input, "New Challenge");
+    });
     const button = await screen.findByRole("button", {
       name: /create challenge/i,
     });
     expect(initialButton).toBeInTheDocument();
-    await user.click(button);
+    await act(async () => {
+      await user.click(button);
+    });
 
     await waitFor(() => {
       expect(ChallengeAPI.create).toHaveBeenCalledWith({
@@ -89,7 +93,9 @@ describe("DashboardTemplate", () => {
     const toggleButton = screen.getByRole("button", {
       name: /mark completed/i,
     });
-    await user.click(toggleButton);
+    await act(async () => {
+      await user.click(toggleButton);
+    });
 
     await waitFor(() => {
       expect(ChallengeAPI.updateStatus).toHaveBeenCalledWith("1", "Completed");
